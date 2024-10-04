@@ -24,6 +24,6 @@ class Materiale extends Model
 
     public function stocks()
     {
-        return $this->hasMany('App\Models\Stock');
+        return $this->hasMany(Stock::class, 'foreign_key');
     }
 }
