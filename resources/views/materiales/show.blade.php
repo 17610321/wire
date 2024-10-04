@@ -24,7 +24,7 @@
                             Id
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Sku
+                            Cantidad
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Nombre
