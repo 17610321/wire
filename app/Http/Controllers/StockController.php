@@ -42,8 +42,8 @@ class StockController extends Controller
         $stock->user_id = $request->user_id;
         $stock->save();
 
-        $stocks = Stock::all();
-        return $stocks;
+        $material = Stock::all();
+        return view('stock.show', compact('material'));
     }
 
     /**
