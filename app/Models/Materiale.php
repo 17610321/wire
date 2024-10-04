@@ -9,7 +9,7 @@ class Materiale extends Model
 {
     use HasFactory;
 
-    protected $fillable=[
+    protected $fillable = [
         'sku',
         'name',
         'descripcion',
@@ -17,9 +17,13 @@ class Materiale extends Model
 
     ];
 
-    public function users(){
+    public function users()
+    {
         return $this->belongsToMany('App\Models\User');
     }
 
-
+    public function stocks()
+    {
+        return $this->hasMany('App\Models\Stock');
+    }
 }

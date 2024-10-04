@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MaterialeController;
+use App\Http\Controllers\StockController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -31,10 +32,10 @@ Route::middleware([
 });
 
 
-Route::get('material',[MaterialeController::class,'show'])->name('materiales.mostrar');
+Route::get('material', [MaterialeController::class, 'show'])->name('materiales.mostrar');
 
-Route::resource('materiales',MaterialeController::class);
-Route::resource('usuarios',UserController::class);
+Route::resource('materiales', MaterialeController::class);
+Route::resource('usuarios', UserController::class);
 
 
-
+Route::resource('stock', StockController::class);
