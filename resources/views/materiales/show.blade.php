@@ -3,6 +3,9 @@
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
             {{ __('Lista de materiales') }}
         </h2>
+
+        <a href="{{ route('materiales.index') }}" type="submit"><x-button class="mt-5">Crear nuevo
+                material</x-button> </a>
     </x-slot>
 
 
@@ -63,8 +66,8 @@
                                 {{ $materiale->descripcion }}
                             </td>
                             <td>
-                                <a href="{{ route('materiales.edit', $materiale) }}" type="button">Editar
-                                </a>
+                                <a href="{{ route('materiales.edit', $materiale) }}" type="button"><x-buttong>Editar
+                                    </x-buttong> </a>
 
 
                             </td>
@@ -73,7 +76,7 @@
                                 <form method="POST" action="{{ route('materiales.destroy', $materiale) }}">
                                     @csrf
                                     @method('delete')
-                                    <x-button type="submit">eliminar</x-button>
+                                    <x-buttonr type="submit">eliminar</x-buttonr>
 
 
                                 </form>

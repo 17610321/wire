@@ -84,6 +84,7 @@
                             <x-input type="hidden" name="user_id" value="{{ Auth::user()->id }}" />
 
 
+
                             <th>
                                 <div class="py-5">
                                     <x-button type="submit">Crear</x-button>
