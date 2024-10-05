@@ -16,7 +16,7 @@ class Stock extends Model
         'user_id'
     ];
 
-    public function material()
+    public function materiale()
     {
         return $this->belongsTo('App\Models\Materiale');
     }
