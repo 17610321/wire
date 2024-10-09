@@ -13,30 +13,6 @@
         </div>
 
 
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-            <table class="w-full text-sm text-left text-gray-500 rtl:text-right dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                    <tr>
-                        <th scope="col" class="px-6 py-3">
-                            Id
-                        </th>
-
-                        <th scope="col" class="px-6 py-3">
-                            Nombre
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Descripcion
-                        </th>
-
-                        <th scope="col" class="px-6 py-3">
-                            Cantidad
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Fecha
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Guardar
-                        </th>
 
 
 
@@ -45,57 +21,38 @@
 
 
 
-                    </tr>
-                </thead>
-                <tbody>
-                    <form method="POST" action="{{ route('stock.store') }}">
-                        @csrf
+
+
+        <x-card>
+            <form method="POST" action="{{ route('stock.store') }}">
+                @csrf
 
 
 
-                        <tr class="white:bg-gray-800">
-                            @foreach ($material as $materiale)
-                        </tr>
-                        <tr>
-                            <th>
+                <x-label value="Id material" />
+                <x-input placeholder="clave del material" name="id_material" value="{{ $mat->id }}" disabled />
+                <x-label value="Nombre" />
+                <x-input name="name" value="{{ $mat->name }}" disabled />
+                <x-label value="Descripción" />
+                <x-input value="{{ $mat->descripcion }}" disabled />
+                <x-label value="cantidad" />
+                <x-input placeholder="Ingrese cantidad" name="cantidad" />
+                <x-label value="fecha" />
 
-                                <x-input placeholder="clave del material" name="materiale_id"
-                                    value="{{ $materiale->id }}" readonly />
-                            </th>
-
-                            <th scope="row"
-                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                <x-input placeholder="Nombre del material" name="name" value="{{ $materiale->name }}"
-                                    disabled />
-                            </th>
-                            <th>
-
-
-                                <x-input placeholder="Descripcion del material" name="descripcion"
-                                    value="{{ $materiale->descripcion }}" disabled />
-                            </th>
-                            <th>
-                                <x-input name="cantidad" />
-                            </th>
-
-                            <th scope="col" class="px-6 py-3">
-                                <x-input name="fecha" value="{{ $date }}" readonly />
-                            </th>
-                            <x-input type="hidden" name="user_id" value="{{ Auth::user()->id }}" />
+                <x-input name="fecha" value="{{ $date }}" readonly />
 
 
 
-                            <th>
-                                <div class="py-5">
-                                    <x-button type="submit">Crear</x-button>
-                                </div>
-                            </th>
-                            @endforeach
-                        </tr>
-                    </form>
-                </tbody>
-            </table>
-        </div>
+                <div class="py-5">
+                    <x-button type="submit">Crear</x-button>
+                </div>
+
+            </form>
+
+        </x-card>
+
+
+
 
 
     </x-container>

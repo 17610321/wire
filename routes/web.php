@@ -37,5 +37,5 @@ Route::get('material', [MaterialeController::class, 'show'])->name('materiales.m
 Route::resource('materiales', MaterialeController::class);
 Route::resource('usuarios', UserController::class);
 
-
+Route::get('stock/{materiale}', [StockController::class, 'index2'])->name('stock.index2');
 Route::resource('stock', StockController::class);

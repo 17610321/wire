@@ -15,11 +15,14 @@ class StockController extends Controller
      */
     public function index()
     {
+        //
+    }
+
+    public function index2(Materiale $materiale)
+    {
         $date = Date::now();
 
-        $mat = Materiale::get();
-
-        return view('stock.index', ['material' => $mat, 'date' => $date]);
+        return view('stock.index', ['mat' => $materiale, 'date' => $date]);
     }
 
     /**

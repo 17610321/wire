@@ -88,7 +88,7 @@
 
                             <td>
                                 <div class="relative ms-3">
-                                    <x-dropdown align="right" width="60">
+                                    <x-dropdown width="60">
                                         <x-slot name="trigger">
                                             <span class="inline-flex rounded-md">
                                                 <button type="button"
@@ -115,7 +115,7 @@
                                                 </x-dropdown-link>
 
 
-                                                <x-dropdown-link href="{{ route('stock.index') }}">
+                                                <x-dropdown-link href="{{ route('stock.index2', $materiale) }}">
                                                     {{ __('Agregar stock') }}
                                                 </x-dropdown-link>
 
@@ -125,6 +125,8 @@
                                     </x-dropdown>
                                 </div>
                             </td>
+
+
                     </tr>
                     @endforeach
 
