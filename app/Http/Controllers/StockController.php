@@ -15,7 +15,9 @@ class StockController extends Controller
      */
     public function index()
     {
-        //
+
+        $stock = Stock::paginate('5');
+        return view('stock.show', compact('stock'));
     }
 
     public function index2(Materiale $materiale)
@@ -53,7 +55,7 @@ class StockController extends Controller
         }
 
         $material = Materiale::all();
-        return view('stock.show', compact('material'));
+        return view('stock.store', compact('material'));
     }
 
     /**
