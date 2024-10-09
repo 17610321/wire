@@ -33,6 +33,9 @@
                             Descripcion
                         </th>
                         <th scope="col" class="px-6 py-3">
+                            Stock
+                        </th>
+                        <th scope="col" class="px-6 py-3">
                             editar
                         </th>
                         <th scope="col" class="px-6 py-3">
@@ -64,6 +67,10 @@
                             <td scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $materiale->descripcion }}
+                            </td>
+                            <td scope="row"
+                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {{ $materiale->stock }}
                             </td>
                             <td>
                                 <a href="{{ route('materiales.edit', $materiale) }}" type="button"><x-buttong>Editar

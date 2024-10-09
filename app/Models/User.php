@@ -65,11 +65,13 @@ class User extends Authenticatable
 
 
 
-    public function rol(){
-        return $this->hasOne('App\Models\Role');
+    public function rol()
+    {
+        return $this->hasOne(Role::class);
     }
 
-    public function materiales(){
-        return $this->belongsToMany('App\Models\Materiale');
+    public function materiales()
+    {
+        return $this->belongsToMany(Materiale::class);
     }
 }

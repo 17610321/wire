@@ -25,6 +25,8 @@
                 <x-input placeholder="Nombre del material" name="name" />
                 <x-label value="Descripcion" />
                 <x-input placeholder="Descripcion del material" name="descripcion" />
+                <x-label value="Stock" />
+                <x-input placeholder="stock del material" name="stock" />
 
                 <x-input type="hidden" name="user_id" value="{{ Auth::user()->id }}" />
 

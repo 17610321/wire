@@ -13,17 +13,18 @@ class Materiale extends Model
         'sku',
         'name',
         'descripcion',
-        'user_id'
+        'user_id',
+        'stock'
 
     ];
 
-    public function users()
+    public function user()
     {
-        return $this->belongsToMany('App\Models\User');
+        return $this->belongsTo(User::class);
     }
 
     public function stocks()
     {
-        return $this->hasMany(Stock::class, 'foreign_key', 'local_key');
+        return $this->hasMany(Stock::class);
     }
 }

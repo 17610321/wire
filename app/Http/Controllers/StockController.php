@@ -39,8 +39,14 @@ class StockController extends Controller
         $stock->cantidad = $request->cantidad;
         $stock->fecha = $request->fecha;
         $stock->materiale_id = $request->materiale_id;
-        $stock->user_id = $request->user_id;
-        $stock->save();
+        $stock->type = $request->type;
+
+
+        if ($stock->save()) {
+            $material = Materiale::find($request->materiale_id);
+            $material->stock = $material->stock + $request->cantidad;
+            $material->save();
+        }
 
         $material = Stock::all();
         return view('stock.show', compact('material'));

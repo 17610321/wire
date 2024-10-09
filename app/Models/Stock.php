@@ -13,11 +13,11 @@ class Stock extends Model
         'cantidad',
         'fecha',
         'materiale_id',
-        'user_id'
+        'type'
     ];
 
     public function materiale()
     {
-        return $this->belongsTo('App\Models\Materiale');
+        return $this->belongsTo(Materiale::class);
     }
 }

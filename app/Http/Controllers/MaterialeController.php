@@ -21,14 +21,7 @@ class MaterialeController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-
-    {
-
-
-
-
-    }
+    public function create() {}
 
     /**
      * Store a newly created resource in storage.
@@ -36,17 +29,16 @@ class MaterialeController extends Controller
     public function store(Request $request)
     {
 
-        $materiale=new Materiale();
-        $materiale->sku=$request->sku;
-        $materiale->name=$request->name;
-        $materiale->descripcion=$request->descripcion;
-        $materiale->user_id=$request->user_id;
+        $materiale = new Materiale();
+        $materiale->sku = $request->sku;
+        $materiale->name = $request->name;
+        $materiale->descripcion = $request->descripcion;
+        $materiale->user_id = $request->user_id;
+        $materiale->stock = $request->stock;
         $materiale->save();
 
-        $material=Materiale::all();
-        return view('materiales.show',compact('material'));
-
-
+        $material = Materiale::all();
+        return view('materiales.show', compact('material'));
     }
 
     /**
@@ -54,8 +46,10 @@ class MaterialeController extends Controller
      */
     public function show(Materiale $materiale)
     {
-           $material=Materiale::all();
-        return view('materiales.show',compact('material'));
+        $material = Materiale::all();
+        return view('materiales.show', compact('material'));
+
+        /**agregar db con join para hacer búsquedas con la paginacion */
     }
 
     /**
@@ -64,7 +58,7 @@ class MaterialeController extends Controller
     public function edit(Materiale $materiale)
     {
 
-        return view('materiales.editar',compact('materiale'));
+        return view('materiales.editar', compact('materiale'));
     }
 
     /**
@@ -72,16 +66,13 @@ class MaterialeController extends Controller
      */
     public function update(Request $request, Materiale $materiale)
     {
-        $materiale->sku=$request->sku;
-        $materiale->name=$request->name;
-        $materiale->descripcion=$request->descripcion;
+        $materiale->sku = $request->sku;
+        $materiale->name = $request->name;
+        $materiale->descripcion = $request->descripcion;
         $materiale->save();
 
-        $material=Materiale::all();
-        return view('materiales.show',compact('material'));
-
-
-
+        $material = Materiale::all();
+        return view('materiales.show', compact('material'));
     }
 
     /**
@@ -90,12 +81,8 @@ class MaterialeController extends Controller
     public function destroy(Materiale $materiale)
     {
 
-       $materiale->delete();
-       $material=Materiale::all();
-       return view('materiales.show',compact('material'));
-
-
-
-
+        $materiale->delete();
+        $material = Materiale::all();
+        return view('materiales.show', compact('material'));
     }
 }
