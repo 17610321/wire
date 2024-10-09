@@ -11,7 +11,7 @@
     <x-container class="py-12 ">
 
         <div class="py-10">
-            <span>En esta seccion podras ver tu stock</span>
+            <span>En esta seccion podras ver los materiales de tu inventario</span>
         </div>
 
 
@@ -32,12 +32,10 @@
                             Descripcion
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            editar
+                            Stock
                         </th>
-                        <th scope="col" class="px-6 py-3">
 
-                            eliminar
-                        </th>
+
 
 
 
@@ -48,35 +46,32 @@
                 </thead>
                 <tbody>
                     <tr class="white:bg-gray-800">
-                        @foreach ($stocks as $stock)
+                        @foreach ($material as $materiale)
                             <th scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $stock->id }}
+                                {{ $materiale->id }}
                             </th>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $stock->cantidad }}
+                                {{ $materiale->sku }}
                             </td>
                             <td scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $stock->fecha }}
+                                {{ $materiale->name }}
+                            </td>
+                            <td scope="row"
+                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {{ $materiale->descripcion }}
+                            </td>
+                            <td scope="row"
+                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {{ $materiale->stock }}
                             </td>
 
-                            <td>
-                                <a href="{{ route('stock.edit', $materiale) }}" type="button"><x-buttong>Editar
-                                    </x-buttong> </a>
 
 
-                            </td>
-                            <td>
-
-                                <form method="POST" action="{{ route('stock.destroy', $materiale) }}">
-                                    @csrf
-                                    @method('delete')
-                                    <x-buttonr type="submit">eliminar</x-buttonr>
 
 
-                                </form>
-                            </td>
+
                     </tr>
                     @endforeach
 
