@@ -39,10 +39,11 @@ class StockController extends Controller
     public function store(Request $request)
     {
         $stock = new Stock();
+        $stock->materiale_id = $request->materiale_id;
         $stock->cantidad = $request->cantidad;
         $stock->fecha = $request->fecha;
-        $stock->materiale_id = $request->materiale_id;
-        $stock->type = $request->type;
+
+
 
 
         if ($stock->save()) {
@@ -51,8 +52,8 @@ class StockController extends Controller
             $material->save();
         }
 
-        $material = Stock::all();
-        return view('stock.show', compact('material'));
+        $stocks = Stock::all();
+        return view('stock.show', compact('stocks'));
     }
 
     /**

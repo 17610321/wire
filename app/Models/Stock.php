@@ -10,10 +10,9 @@ class Stock extends Model
     use HasFactory;
 
     protected $fillable = [
-        'cantidad',
-        'fecha',
         'materiale_id',
-        'type'
+        'cantidad',
+        'fecha'
     ];
 
     public function materiale()

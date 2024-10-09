@@ -17,7 +17,6 @@ return new class extends Migration
             $table->date('fecha');
             $table->unsignedBigInteger('materiale_id');
             $table->foreign('materiale_id')->references('id')->on('materiales');
-            $table->integer('type');
             $table->timestamps();
         });
     }

@@ -48,22 +48,19 @@
                 </thead>
                 <tbody>
                     <tr class="white:bg-gray-800">
-                        @foreach ($material as $materiale)
+                        @foreach ($stocks as $stock)
                             <th scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $materiale->id }}
+                                {{ $stock->id }}
                             </th>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $materiale->cantidad }}
+                                {{ $stock->cantidad }}
                             </td>
                             <td scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $materiale->materiale()->get() }}
+                                {{ $stock->fecha }}
                             </td>
-                            <td scope="row"
-                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $materiale->descripcion }}
-                            </td>
+
                             <td>
                                 <a href="{{ route('stock.edit', $materiale) }}" type="button"><x-buttong>Editar
                                     </x-buttong> </a>
