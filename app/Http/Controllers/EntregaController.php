@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Entrega;
+use App\Models\Materiale;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class EntregaController extends Controller
@@ -12,7 +14,9 @@ class EntregaController extends Controller
      */
     public function index()
     {
-        return view('');
+        $user = User::all();
+        $material = Materiale::all();
+        return view('entregas.index', compact('user', 'material'));
     }
 
     /**
