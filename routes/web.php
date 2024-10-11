@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\EntregaController;
 use App\Http\Controllers\MaterialeController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\UserController;
+use App\Models\Entrega;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -39,3 +41,4 @@ Route::resource('usuarios', UserController::class);
 
 Route::get('stock/{materiale}', [StockController::class, 'index2'])->name('stock.index2');
 Route::resource('stock', StockController::class);
+Route::resource('entregas', EntregaController::class);
