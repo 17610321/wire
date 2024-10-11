@@ -11,8 +11,8 @@ class Buscador extends Component
 
 
 {
-
     public $buscar;
+
 
     public function render()
     {

@@ -6,6 +6,7 @@
         placeholder="Buscar materiales" required />
 
     <x-input />
+    <x-input wire:model='buscar' />
 
 
 
