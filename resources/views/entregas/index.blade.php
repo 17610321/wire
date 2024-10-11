@@ -38,20 +38,17 @@
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     @foreach ($material as $materiales)
                         <option value="{{ $materiales->id }}" name="materiale_id">
-                            {{ $materiales->descripcion }}</option>
+                            {{ $materiales->name }}</option>
                     @endforeach
                 </select>
 
 
 
-                <x-label value="Nombre" />
-                <x-input placeholder="Nombre del material" name="name" />
-                <x-label value="Descripcion" />
-                <x-input placeholder="Descripcion del material" name="descripcion" />
-                <x-label value="Stock" />
-                <x-input placeholder="stock del material" name="stock" />
+                <x-label value="Cantidad" />
+                <x-input placeholder="Nombre del material" name="cantidad" />
+                <x-label value="Fecha" />
+                <x-input placeholder="Descripcion del material" name="fecha" />
 
-                <x-input type="hidden" name="user_id" value="{{ Auth::user()->id }}" />
 
                 <div class="py-5">
                     <x-button type="submit">Crear</x-button>
