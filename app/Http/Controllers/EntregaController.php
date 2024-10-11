@@ -32,7 +32,15 @@ class EntregaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $entrega = new Entrega();
+        $entrega->user_id = $request->user_id;
+        $entrega->materiale_id = $request->materiale_id;
+        $entrega->cantidad = $request->cantidad;
+        $entrega->fecha = $request->fecha;
+        $entrega->save();
+
+
+        return $entrega;
     }
 
     /**

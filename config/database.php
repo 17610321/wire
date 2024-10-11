@@ -43,30 +43,7 @@ return [
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
-        //**codigo anexado prar conexion db */
 
-        'mysql' => [
-            'read' => [
-                'host' => [
-                    '192.168.1.1',
-                    '196.168.1.2',
-                ],
-            ],
-            'write' => [
-                'host' => [
-                    '196.168.1.3',
-                ],
-            ],
-            'sticky' => true,
-            'driver' => 'mysql',
-            'database' => 'database',
-            'username' => 'root',
-            'password' => '',
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
-        ],
-        /**aqui termina codigo anexado */
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
