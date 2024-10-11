@@ -19,7 +19,7 @@ class Buscador extends Component
     public function render()
     {
 
-        $material = Materiale::where('name', 'like', '%' . $this->buscar . '%')->get();
+        $material = Materiale::where('descripcion', 'like', '%' . $this->buscar . '%')->get();
         return view('livewire.buscador', ['material' => $material]);
     }
 }
