@@ -12,11 +12,11 @@ class Buscador extends Component
 
 {
 
-    public $search;
+    public $buscar;
 
     public function render()
     {
-        $material = Materiale::all();
+        $material = Materiale::where('name', 'like', '%' . $this->$buscar . '%');
         return view('livewire.buscador', compact('material'));
     }
 }
