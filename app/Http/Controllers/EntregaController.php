@@ -6,6 +6,9 @@ use App\Models\Entrega;
 use App\Models\Materiale;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\DB;
 
 class EntregaController extends Controller
 {
@@ -14,9 +17,10 @@ class EntregaController extends Controller
      */
     public function index()
     {
-        $user = User::all();
+        $date = Date::now();
+        $user = DB::select('SELECT * FROM users ');
         $material = Materiale::all();
-        return view('entregas.index', compact('user', 'material'));
+        return view('entregas.index', compact('user', 'material', 'date'));
     }
 
     /**
@@ -39,8 +43,8 @@ class EntregaController extends Controller
         $entrega->fecha = $request->fecha;
         $entrega->save();
 
-
-        return $entrega;
+        $entregas = Entrega::paginate('10');
+        return view('entregas.show', compact('entregas'));
     }
 
     /**

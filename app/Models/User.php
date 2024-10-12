@@ -74,4 +74,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Materiale::class);
     }
+
+    public function entregas()
+    {
+        return $this->belongsToMany(Entrega::class);
+    }
 }

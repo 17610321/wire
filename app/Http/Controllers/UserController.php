@@ -59,7 +59,7 @@ class UserController extends Controller
         $usuario->apellidos = $request->apellidos;
         $usuario->empleado = $request->empleado;
         $usuario->email = $request->email;
-        $usuario->password->PASSWORD_BCRYPT = $request->password;
+        $usuario->password = $request->password;
         $usuario->puesto = $request->puesto;
         $usuario->rol = $request->rol;
         $usuario->save();

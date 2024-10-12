@@ -90,7 +90,7 @@
                                 <form method="POST" action="{{ route('usuarios.destroy', $usuario) }}">
                                     @csrf
                                     @method('delete')
-                                    <x-button type="submit">eliminar</x-button>
+                                    <x-buttonr type="submit">eliminar</x-buttonr>
 
 
                                 </form>

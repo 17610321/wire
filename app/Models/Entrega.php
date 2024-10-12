@@ -22,4 +22,9 @@ class Entrega extends Model
     {
         return $this->HasMany(Materiale::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
