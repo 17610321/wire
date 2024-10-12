@@ -13,11 +13,9 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
 
-                    <x-nav-link href="{{ route('materiales.index') }}" :active="request()->routeIs('materiales.index')">
-                        {{ __('Materiales') }}
-                    </x-nav-link>
+
                     <x-nav-link href="{{ route('materiales.mostrar') }}" :active="request()->routeIs('materiales.mostrar')">
-                        {{ __('Ver Materiales') }}
+                        {{ __('Materiales') }}
                     </x-nav-link>
                     <x-nav-link href="{{ route('stock.index') }}" :active="request()->routeIs('stock.index')">
                         {{ __('Stock') }}
