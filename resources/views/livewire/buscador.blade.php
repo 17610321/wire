@@ -27,7 +27,6 @@
     </form>
 
 
-    <x-input wire:model="buscar" />
 
 
     <div class="py-10">

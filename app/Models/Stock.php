@@ -15,6 +15,7 @@ class Stock extends Model
         'fecha'
     ];
 
+
     public function materiale()
     {
         return $this->belongsTo(Materiale::class);

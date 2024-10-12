@@ -87,6 +87,13 @@ class StockController extends Controller
      */
     public function destroy(Stock $stock)
     {
-        //
+
+        if ($stock->delete()) {
+            $material = Materiale::find($stock->materiale_id);
+            $material->stock = $material->stock - $stock->cantidad;
+            $material->save();
+        }
+        $stock = Stock::paginate('10');
+        return view('stock.show', compact('stock'));
     }
 }

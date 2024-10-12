@@ -32,9 +32,9 @@
                 <x-label value="Id material" />
                 <x-input placeholder="clave del material" name="materiale_id" value="{{ $mat->id }}" readonly />
                 <x-label value="Nombre" />
-                <x-input name="name" value="{{ $mat->name }}" disabled />
+                <x-input name="name" value="{{ materiale()->name }}" disabled />
                 <x-label value="Descripción" />
-                <x-input value="{{ $mat->descripcion }}" disabled />
+                <x-input value="{{ materiale()->descripcion }}" disabled />
                 <x-label value="cantidad" />
                 <x-input placeholder="Ingrese cantidad" name="cantidad" />
                 <x-label value="fecha" />
