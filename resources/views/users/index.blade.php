@@ -79,9 +79,9 @@
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $usuario->rol }}
                             </td>
-                            <td>
-                                <a href="{{ route('usuarios.edit', $usuario) }}" type="button">Editar
-                                </a>
+                            <td><x-buttong>
+                                    <a href="{{ route('usuarios.edit', $usuario) }}" type="button">Editar
+                                    </a></x-buttong>
 
 
                             </td>

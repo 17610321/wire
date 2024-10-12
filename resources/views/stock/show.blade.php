@@ -73,7 +73,7 @@
 
                             <td>
 
-                                <form method="POST" action="{{ route('stock.destroy', $stock) }}">
+                                <form method="POST" action="{{ route('stock.destroy', $stocks) }}">
                                     @csrf
                                     @method('delete')
                                     <x-buttonr type="submit">eliminar</x-buttonr>

@@ -19,11 +19,9 @@
             <table class="w-full text-sm text-left text-gray-500 rtl:text-right dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
+
                         <th scope="col" class="px-6 py-3">
-                            Id
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Cantidad
+                            Sku
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Nombre
@@ -47,10 +45,6 @@
                 <tbody>
                     <tr class="white:bg-gray-800">
                         @foreach ($material as $materiale)
-                            <th scope="row"
-                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $materiale->id }}
-                            </th>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $materiale->sku }}
                             </td>

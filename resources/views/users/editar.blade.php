@@ -28,8 +28,7 @@
             <x-input placeholder="Número de empleado" name="empleado" value="{{ $usuario->empleado }}" />
             <x-label value="Email" />
             <x-input placeholder="Email" name="email" value="{{ $usuario->email }}" />
-            <x-label value="Contraseña" />
-            <x-input placeholder="password" name="password" value="{{ $usuario->password }}" />
+
             <x-label value="Puesto" />
             <x-input placeholder="Email" name="puesto" value="{{ $usuario->puesto }}" />
             <x-label value="Rol" />
