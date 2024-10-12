@@ -93,7 +93,7 @@ class StockController extends Controller
             $material->stock = $material->stock - $stock->cantidad;
             $material->save();
         }
-        $stock = Stock::paginate('10');
-        return view('stock.show', compact('stock'));
+        $material = Materiale::all();
+        return view('stock.store', compact('material'));
     }
 }
