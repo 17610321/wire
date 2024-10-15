@@ -13,7 +13,7 @@
         </div>
 
         <x-card>
-            <form method="POST" action="{{ route('entregas.store') }}">
+            <form method="POST" action="{{ route('entrega.store') }}">
                 @csrf
 
 

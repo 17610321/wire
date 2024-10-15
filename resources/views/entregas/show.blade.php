@@ -102,7 +102,7 @@
 
 
                                                 <!-- Team Settings -->
-                                                <x-dropdown-link href="{{ route('entregas.edit', $entrega) }}">
+                                                <x-dropdown-link href="{{ route('entrega.edit', $entrega) }}">
                                                     {{ __('Editar') }}
                                                 </x-dropdown-link>
 

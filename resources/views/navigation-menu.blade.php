@@ -23,10 +23,10 @@
                     <x-nav-link href="{{ route('usuarios.index') }}" :active="request()->routeIs('usuarios.index')">
                         {{ __('Usuarios') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('entregas.index') }}" :active="request()->routeIs('entregas.index')">
+                    <x-nav-link href="{{ route('entrega.index') }}" :active="request()->routeIs('entrega.index')">
                         {{ __('Entregas') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('entregas.index2') }}" :active="request()->routeIs('entregas.index2')">
+                    <x-nav-link href="{{ route('entregas.mostrar') }}" :active="request()->routeIs('entregas.mostrar')">
                         {{ __('Mi inventario') }}
                     </x-nav-link>
                 </div>

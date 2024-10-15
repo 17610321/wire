@@ -7,6 +7,7 @@ use App\Models\Materiale;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 
@@ -22,11 +23,14 @@ class EntregaController extends Controller
         $material = Materiale::all();
         return view('entregas.index', compact('user', 'material', 'date'));
     }
-    public function mostrar(User $user)
+    public function mostrar()
     {
 
-        $usuario = User::find($user);
-        $entregas = DB::select('SELECT * FROM entregas');
+        $id = Auth::user()->id;
+        $entregas = DB::table('entregas')
+            ->where('user_id', '=', $id)
+            ->get();
+
         return $entregas;
     }
     /**

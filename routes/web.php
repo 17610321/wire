@@ -42,5 +42,7 @@ Route::resource('usuarios', UserController::class);
 Route::get('stock/{materiale}', [StockController::class, 'index2'])->name('stock.index2');
 Route::resource('stock', StockController::class);
 
+
+
 Route::get('entregas', [EntregaController::class, 'mostrar'])->name('entregas.mostrar');
-Route::resource('entregas', EntregaController::class);
+Route::resource('entrega', EntregaController::class);
