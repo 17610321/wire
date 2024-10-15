@@ -125,7 +125,7 @@
             </table>
         </div>
 
-        </div>
+
 
 
         {{ $entregas->links() }}
