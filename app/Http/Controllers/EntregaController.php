@@ -22,7 +22,7 @@ class EntregaController extends Controller
         $material = Materiale::all();
         return view('entregas.index', compact('user', 'material', 'date'));
     }
-    public function index2(User $user)
+    public function mostrar(User $user)
     {
 
         $usuario = User::find($user);
