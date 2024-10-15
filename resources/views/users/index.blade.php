@@ -55,39 +55,39 @@
                 </thead>
                 <tbody>
                     <tr class="white:bg-gray-800">
-                        @foreach ($usuario as $usuario)
+                        @foreach ($usuario as $user)
                             <th scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $usuario->id }}
+                                {{ $user->id }}
                             </th>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $usuario->name }}
+                                {{ $user->name }}
                             </td>
                             <td scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $usuario->apellidos }}
+                                {{ $user->apellidos }}
                             </td>
                             <td scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $usuario->empleado }}
+                                {{ $user->empleado }}
                             </td>
                             <td scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $usuario->puesto }}
+                                {{ $user->puesto }}
                             </td>
                             <td scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $usuario->rol }}
+                                {{ $user->rol }}
                             </td>
                             <td><x-buttong>
-                                    <a href="{{ route('usuarios.edit', $usuario) }}" type="button">Editar
+                                    <a href="{{ route('usuarios.edit', $user) }}" type="button">Editar
                                     </a></x-buttong>
 
 
                             </td>
                             <td>
 
-                                <form method="POST" action="{{ route('usuarios.destroy', $usuario) }}">
+                                <form method="POST" action="{{ route('usuarios.destroy', $user) }}">
                                     @csrf
                                     @method('delete')
                                     <x-buttonr type="submit">eliminar</x-buttonr>

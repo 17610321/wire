@@ -71,10 +71,10 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $usuario)
+    public function destroy(User $user)
     {
 
-        $usuario->delete();
+        $user->delete();
         $usuario = User::all();
         return view('users.index', compact('usuario'));
     }
