@@ -26,8 +26,8 @@
                     <x-nav-link href="{{ route('entregas.index') }}" :active="request()->routeIs('entregas.index')">
                         {{ __('Entregas') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Devoluciones') }}
+                    <x-nav-link href="{{ route('entregas.index2') }}" :active="request()->routeIs('entregas.index2')">
+                        {{ __('Mi inventario') }}
                     </x-nav-link>
                 </div>
             </div>

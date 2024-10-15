@@ -22,7 +22,13 @@ class EntregaController extends Controller
         $material = Materiale::all();
         return view('entregas.index', compact('user', 'material', 'date'));
     }
+    public function index2(User $user)
+    {
 
+        $usuario = User::find($user);
+        $entregas = DB::select('SELECT * FROM entregas');
+        return $entregas;
+    }
     /**
      * Show the form for creating a new resource.
      */
