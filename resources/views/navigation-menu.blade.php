@@ -6,7 +6,6 @@
                 <!-- Logo -->
                 <div class="flex items-center shrink-0">
                     <a href="{{ route('dashboard') }}">
-
                         <x-authentication-card-logo />
                     </a>
                 </div>
