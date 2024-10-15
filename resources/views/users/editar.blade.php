@@ -30,10 +30,33 @@
             <x-input placeholder="Email" name="email" value="{{ $usuario->email }}" />
             <x-input type="hidden" name="password" value="{{ $usuario->password }}" />
 
-            <x-label value="Puesto" />
-            <x-input placeholder="Email" name="puesto" value="{{ $usuario->puesto }}" />
-            <x-label value="Rol" />
-            <x-input placeholder="Email" name="rol" value="{{ $usuario->rol }}" />
+
+
+
+            <label for="puestos" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Puesto</label>
+            <select id="puestos" name="puesto"
+                class="text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 block:font-medium dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected>{{ $usuario->puesto }}</option>
+                <option value="instalador">Técnico instalador</option>
+                <option value="mantenimiento">Técnico mantenimiento</option>
+                <option value="gerente">Gerente</option>
+
+            </select>
+
+
+
+
+            <label for="rol" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rol</label>
+            <select id="rol" name="rol"
+                class="text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 block:font-medium dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected>{{ $usuario->rol }}</option>
+                <option value="admin">Administrador</option>
+                <option value="user">User</option>
+
+            </select>
+
+
+
             <x-label />
             <x-input type="hidden" name="id" value="{{ $usuario->id }}" />
 

@@ -29,8 +29,10 @@
 
 
 
-                <x-label value="Id material" />
-                <x-input placeholder="clave del material" name="materiale_id" value="{{ $mat->id }}" readonly />
+
+                <x-input placeholder="clave del material" name="materiale_id" value="{{ $mat->id }}" type="hidden" />
+                <x-label value="Sku" />
+                <x-input placeholder="clave del material" name="sku" value="{{ $mat->sku }}" readonly />
                 <x-label value="Nombre" />
                 <x-input name="name" value="{{ $mat->name }}" disabled />
                 <x-label value="Descripción" />
