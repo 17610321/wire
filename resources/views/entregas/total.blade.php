@@ -3,6 +3,12 @@
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
             {{ __('Entrega de materiales') }}
         </h2>
+
+
+
+
+        <a href="{{ route('entrega.index') }}" type="submit"><x-button class="mt-5">Hacer entrega</x-button> </a>
+
     </x-slot>
 
 
