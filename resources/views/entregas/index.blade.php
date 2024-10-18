@@ -52,7 +52,7 @@
 
 
                 <div class="py-5">
-                    <x-button type="submit">Crear</x-button>
+                    <x-button type="submit">Guardar</x-button>
                 </div>
 
 
