@@ -7,6 +7,7 @@ use App\Models\Materiale;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Foundation\Console\ViewMakeCommand;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
@@ -23,16 +24,8 @@ class EntregaController extends Controller
         $material = Materiale::all();
         return view('entregas.index', compact('user', 'material', 'date'));
     }
-    public function mostrar()
-    {
 
-        $id = Auth::user()->id;
-        $entregas = DB::table('entregas')
-            ->where('user_id', '=', $id)
-            ->get();
 
-        return $entregas;
-    }
     /**
      * Show the form for creating a new resource.
      */
@@ -60,18 +53,12 @@ class EntregaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Entrega $entrega)
-    {
-        //
-    }
+    public function show(Entrega $entrega) {}
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Entrega $entrega)
-    {
-        //
-    }
+    public function edit(Entrega $entrega) {}
 
     /**
      * Update the specified resource in storage.

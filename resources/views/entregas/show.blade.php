@@ -9,7 +9,8 @@
     <x-container class="py-12 ">
 
         <div class="py-10">
-            <span>En esta sección podrás ver hacer los materiales asignados a los empleados</span>
+            <span>En esta sección podrás ver tus materiales {{ Auth::user()->name }} </span>
+
         </div>
 
 
@@ -128,7 +129,7 @@
 
 
 
-        {{ $entregas->links() }}
+
 
     </x-container>
 
