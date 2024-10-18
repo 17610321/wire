@@ -29,7 +29,7 @@
                     <x-nav-link href="{{ route('inventario.total') }}" :active="request()->routeIs('inventario.total')">
                         {{ __('Entregas all') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('inventario.mostrar') }}" :active="request()->routeIs('inventario.mostrar')">
+                    <x-nav-link href="{{ route('entregas.mostrar') }}" :active="request()->routeIs('entregas.mostrar')">
                         {{ __('Mi inventario') }}
                     </x-nav-link>
                 </div>

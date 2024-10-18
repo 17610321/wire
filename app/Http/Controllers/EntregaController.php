@@ -25,7 +25,15 @@ class EntregaController extends Controller
         return view('entregas.index', compact('user', 'material', 'date'));
     }
 
+    public function mostrar()
+    {
+        $id = Auth::user()->id;
+        $entregas = Entrega::select()
+            ->where('user_id', '=', $id)
+            ->get();
 
+        return view('entregas.show', compact('entregas'));
+    }
     /**
      * Show the form for creating a new resource.
      */

@@ -5,8 +5,6 @@ use App\Http\Controllers\InventarioController;
 use App\Http\Controllers\MaterialeController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\UserController;
-use App\Models\Entrega;
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,8 +42,8 @@ Route::get('stock/{materiale}', [StockController::class, 'index2'])->name('stock
 Route::resource('stock', StockController::class);
 
 
+Route::get('entregas', [EntregaController::class, 'mostrar'])->name('entregas.mostrar');
 
 
 Route::resource('entrega', EntregaController::class);
 Route::get('inventario', [InventarioController::class, 'total'])->name('inventario.total');
-Route::get('inventario', [InventarioController::class, 'mostrar'])->name('inventario.mostar');

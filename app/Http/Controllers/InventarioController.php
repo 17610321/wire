@@ -14,15 +14,4 @@ class InventarioController extends Controller
         $entregas = Entrega::all();
         return view('entregas.total', compact('entregas'));
     }
-
-
-    public function mostrar()
-    {
-        $id = Auth::user()->id;
-        $entregas = Entrega::select()
-            ->where('user_id', '=', $id)
-            ->get();
-
-        return view('entregas.show', compact('entregas'));
-    }
 }
