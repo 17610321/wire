@@ -10,7 +10,7 @@
     <x-container class="py-12 ">
 
         <div class="py-10">
-            <span>En esta seccion podras ver los movimientos del stock</span>
+            <span>En esta sección podrás ver los movimientos del stock</span>
         </div>
 
 
