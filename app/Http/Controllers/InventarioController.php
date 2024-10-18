@@ -11,7 +11,7 @@ class InventarioController extends Controller
 
     public function total()
     {
-        $entregas = Entrega::all();
+        $entregas = Entrega::paginate('10');
         return view('entregas.total', compact('entregas'));
     }
 }
