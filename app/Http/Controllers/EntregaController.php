@@ -54,8 +54,8 @@ class EntregaController extends Controller
         $entrega->fecha = $request->fecha;
         $entrega->save();
 
-        $entregas = Entrega::paginate('15');
-        return view('entregas.show', compact('entregas'));
+        $entregas = Entrega::paginate('10');
+        return view('entregas.total', compact('entregas'));
     }
 
     /**
