@@ -130,30 +130,33 @@
             <table class="table table-dark table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+
+                        <th scope="col">Material</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Eliminar</th>
+                        <th scope="col">Editar</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        @foreach ($entregas as $entrega)
+                            <th scope="row">{{ $entrega->materiale_id }}</th>
+                            <td>{{ $entrega->cantidad }}</td>
+                            <td> {{ $entrega->fecha }}</td>
+                            <td>
+                                <form method="POST" action="{{ route('entrega.destroy', $entrega) }}">
+                                    @csrf
+                                    @method('delete')
+                                    <x-buttonr type="submit">eliminar</x-buttonr>
+
+
+                                </form>
+                            </td>
+                            <td><x-buttong>Editar</x-buttong>
+                            </td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
@@ -161,7 +164,7 @@
 
 
 
-
+        {{ $entregas->links() }}
 
     </x-container>
 

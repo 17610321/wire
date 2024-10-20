@@ -7,7 +7,9 @@ use App\Models\Materiale;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Foundation\Console\ViewMakeCommand;
+use Illuminate\Http\Resources\Json\PaginatedResourceResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
@@ -31,6 +33,7 @@ class EntregaController extends Controller
         $entregas = Entrega::select()
             ->where('user_id', '=', $id)
             ->get();
+        $entregas = Entrega::paginate('10')->orderBy('desc');
 
         return view('entregas.show', compact('entregas'));
     }
