@@ -56,11 +56,11 @@
                             </th>
                             <th scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $stocks->Materiale()->get('name') }}
+                                {{ $stocks->materiale->name }}
                             </th>
                             <th scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $stocks->Materiale()->get('descripcion') }}
+                                {{ $stocks->materiale->descripcion }}
                             </th>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $stocks->cantidad }}

@@ -33,7 +33,7 @@ class EntregaController extends Controller
         $entregas = Entrega::select()
             ->where('user_id', '=', $id)
             ->get();
-        $entregas = Entrega::paginate('10')->orderBy('desc');
+        $entregas = Entrega::paginate('10');
 
         return view('entregas.show', compact('entregas'));
     }
