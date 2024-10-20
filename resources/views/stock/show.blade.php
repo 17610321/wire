@@ -19,7 +19,7 @@
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="px-6 py-3">
-                            Id
+                            Sku
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Nombre
@@ -52,7 +52,7 @@
                         @foreach ($stock as $stocks)
                             <th scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $stocks->materiale_id }}
+                                {{ $stocks->materiale->sku }}
                             </th>
                             <th scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
