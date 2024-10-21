@@ -19,9 +19,9 @@ class Entrega extends Model
 
     ];
 
-    public function materiales(): HasMany
+    public function materiale(): BelongsTo
     {
-        return $this->HasMany(Materiale::class);
+        return $this->belongsTo(Materiale::class);
     }
 
     public function user(): BelongsTo
