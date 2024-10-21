@@ -40,9 +40,12 @@ class EntregaController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Entrega $entrega)
     {
-        //
+        $date = Date::now();
+
+        $entregas = Entrega::find($entrega);
+        return view('entregas.actualizar', compact('entregas', 'date'));
     }
 
     /**
@@ -56,6 +59,9 @@ class EntregaController extends Controller
         $entrega->cantidad = $request->cantidad;
         $entrega->fecha = $request->fecha;
         $entrega->save();
+
+
+
 
         $entregas = Entrega::paginate('10');
         return view('entregas.total', compact('entregas'));

@@ -35,6 +35,9 @@
                             Material
                         </th>
                         <th scope="col" class="px-6 py-3">
+                            Descripción
+                        </th>
+                        <th scope="col" class="px-6 py-3">
                             Cantidad
                         </th>
                         <th scope="col" class="px-6 py-3">
@@ -69,6 +72,10 @@
                             </td>
                             <td scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {{ $entrega->materiale->descripcion }}
+                            </td>
+                            <td scope="row"
+                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $entrega->cantidad }}
                             </td>
                             <td scope="row"
@@ -78,13 +85,12 @@
 
                             <td>
 
-                                <form method="POST" action="{{ route('materiales.destroy', $entrega) }}">
-                                    @csrf
-                                    @method('delete')
-                                    <x-buttonr type="submit">eliminar</x-buttonr>
 
 
-                                </form>
+                                <x-buttonr type="submit" href="{{ route('entrega.create') }}">Actualizar</x-buttonr>
+
+
+
                             </td>
 
 
