@@ -30,8 +30,8 @@ class Materiale extends Model
         return $this->hasMany(Stock::class);
     }
 
-    public function entregas(): HasMany
+    public function entrega(): BelongsTo
     {
-        return $this->hasMany(Entrega::class);
+        return $this->belongsTo(Entrega::class);
     }
 }
