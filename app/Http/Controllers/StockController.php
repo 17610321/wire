@@ -55,7 +55,7 @@ class StockController extends Controller
         }
 
         $material = Materiale::all();
-        return view('stock.store', compact('material'));
+        return view('materiales.show', compact('material'));
     }
 
     /**
