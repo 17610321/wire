@@ -45,6 +45,30 @@
         </nav>
     </div>
 
+    <br><br>
+    <div class="container">
+
+
+        <div class="mb-3 card border-primary " style="max-width: 18rem;">
+            <div class="card-header">Misión</div>
+            <div class="card-body text-primary">
+                <h5 class="card-title">Proporcionar servicios de entretenimiento, telecomunicaciones y soluciones
+                    logísticas, empresariales y residenciales que excedan las expectativas del cliente.</h5>
+
+            </div>
+
+        </div>
+
+        <div class="mb-3 card border-secondary" style="max-width: 18rem;">
+            <div class="card-header">Visión</div>
+            <div class="card-body text-secondary">
+                <h5 class="card-title">Ser la mejor compañía de telecomunicaciones del país.</h5>
+
+            </div>
+        </div>
+
+    </div>
+
 
 
 
