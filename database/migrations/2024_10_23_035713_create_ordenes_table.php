@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('ordenes', function (Blueprint $table) {
             $table->id();
+            $table->integer('cliente');
+            $table->unsignedBigInteger('entrega_id');
+            $table->foreign('entrega_id')->references('id')->on('entregas');
+            $table->integer('cantidad');
+            $table->date('fecha');
+
+
             $table->timestamps();
         });
     }

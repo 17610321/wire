@@ -20,8 +20,7 @@
 
                 <x-label value="#Cliente" />
                 <x-input placeholder="ingresa el número de contrato del cliente " name="cliente" />
-                <x-label value="Sku" />
-                <x-input placeholder="Sku del material" name="sku" />
+
                 <label for="materiales" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Elige un
                     material</label>
                 <select id="materiales" name="materiale_id"
@@ -32,10 +31,7 @@
                     @endforeach
                 </select>
 
-                <x-label value="Nombre" />
-                <x-input placeholder="Nombre del material" name="name" />
-                <x-label value="Descripcion" />
-                <x-input placeholder="Descripcion del material" name="descripcion" />
+
                 <x-label value="Cantidad" />
                 <x-input placeholder="cantidad del material" name="cantidad" />
                 <x-label value="fecha" />
@@ -44,7 +40,7 @@
 
 
                 <div class="py-5">
-                    <x-button type="submit">Crear</x-button>
+                    <x-button type="submit">Guardar</x-button>
                 </div>
 
 
