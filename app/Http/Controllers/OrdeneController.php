@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Materiale;
 use App\Models\Ordene;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,8 @@ class OrdeneController extends Controller
      */
     public function index()
     {
-        return view('ordenes.index');
+        $material = Materiale::all();
+        return view('ordenes.index', compact('material'));
     }
 
     /**
