@@ -87,8 +87,8 @@
 
 
 
-                                <x-buttonr type="submit"> <a
-                                        href="{{ route('entrega.edit', $entrega) }}">actualizar</a></x-buttonr>
+                                <x-buttong type="submit"> <a
+                                        href="{{ route('entrega.edit', $entrega) }}">actualizar</a></x-buttong>
 
 
 
@@ -97,19 +97,42 @@
 
 
                             <td>
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        Acciones
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item"
-                                                href="{{ route('entrega.edit', $entrega) }}">Editar</a></li>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    Eliminar
+                                </button>
 
-                                    </ul>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                ¿Estás seguro de eliminar está entrega?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Cerrar</button>
+
+                                                <form method="POST" action="{{ route('entrega.destroy', $entrega) }}">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </td>
+
 
 
                     </tr>

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('Entrega de materiales') }}
+            {{ __('Revisa tu inventario') }}
         </h2>
     </x-slot>
 
@@ -26,8 +26,8 @@
                         <th scope="col">Descripción</th>
                         <th scope="col">Cantidad</th>
                         <th scope="col">Fecha</th>
-                        <th scope="col">Eliminar</th>
-                        <th scope="col">Editar</th>
+                        <th scope="col">Acción</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -41,13 +41,11 @@
                                 <form method="POST" action="{{ route('entrega.destroy', $entrega) }}">
                                     @csrf
                                     @method('delete')
-                                    <x-buttonr type="submit">eliminar</x-buttonr>
+                                    <x-buttonr type="submit">Devolución</x-buttonr>
 
 
                                 </form>
-                            </td>
-                            <td><x-buttong>Editar</x-buttong>
-                            </td>
+
                     </tr>
                     @endforeach
                 </tbody>

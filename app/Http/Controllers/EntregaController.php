@@ -35,7 +35,7 @@ class EntregaController extends Controller
             ->get();
         $entregas = Entrega::paginate('10');
 
-        return view('entregas.show', compact('entregas'));
+        return view('entregas.individual', compact('entregas'));
     }
     /**
      * Show the form for creating a new resource.
