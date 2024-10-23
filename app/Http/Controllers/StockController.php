@@ -94,6 +94,6 @@ class StockController extends Controller
             $material->save();
         }
         $material = Materiale::all();
-        return view('stock.store', compact('material'));
+        return view('materiales.show', compact('material'));
     }
 }

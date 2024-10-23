@@ -60,7 +60,11 @@ class EntregaController extends Controller
         $entrega->fecha = $request->fecha;
         $entrega->save();
 
-
+        if ($entrega->save()) {
+            $material = Materiale::find($request->materiale_id);
+            $material->stock = $material->stock - $request->cantidad;
+            $material->save();
+        }
 
 
         $entregas = Entrega::paginate('10');
@@ -75,14 +79,24 @@ class EntregaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Entrega $entrega) {}
+    public function edit(Entrega $entrega)
+    {
+
+        $date = Date::now();
+        return view('stock.edit', compact('entrega', 'date'));
+    }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, Entrega $entrega)
     {
-        //
+
+
+        $entrega->cantidad = $request->cantidad;
+        $entrega->save();
+        $entregas = Entrega::paginate('10');
+        return view('entregas.total', compact('entregas'));
     }
 
     /**

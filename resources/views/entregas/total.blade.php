@@ -46,11 +46,11 @@
 
                         <th scope="col" class="px-6 py-3">
 
-                            eliminar
+                            Actualizar
                         </th>
                         <th scope="col" class="px-6 py-3">
 
-                            Acciones
+                            Eliminar
                         </th>
 
 
@@ -87,7 +87,8 @@
 
 
 
-                                <x-buttonr type="submit" href="{{ route('entrega.create') }}">Actualizar</x-buttonr>
+                                <x-buttonr type="submit"> <a
+                                        href="{{ route('entrega.edit', $entrega) }}">actualizar</a></x-buttonr>
 
 
 
