@@ -3,6 +3,7 @@
 use App\Http\Controllers\EntregaController;
 use App\Http\Controllers\InventarioController;
 use App\Http\Controllers\MaterialeController;
+use App\Http\Controllers\OrdeneController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -47,3 +48,4 @@ Route::get('entregas', [EntregaController::class, 'mostrar'])->name('entregas.mo
 
 Route::resource('entrega', EntregaController::class);
 Route::get('inventario', [InventarioController::class, 'total'])->name('inventario.total');
+Route::resource('ordenes', OrdeneController::class);

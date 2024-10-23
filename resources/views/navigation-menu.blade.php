@@ -30,6 +30,9 @@
                     <x-nav-link href="{{ route('entregas.mostrar') }}" :active="request()->routeIs('entregas.mostrar')">
                         {{ __('Mi inventario') }}
                     </x-nav-link>
+                    <x-nav-link href="{{ route('ordenes.index') }}" :active="request()->routeIs('ordenes.index')">
+                        {{ __('Ots') }}
+                    </x-nav-link>
                 </div>
             </div>
 
