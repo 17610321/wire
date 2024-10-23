@@ -104,6 +104,12 @@ class EntregaController extends Controller
      */
     public function destroy(Entrega $entrega)
     {
-        //
+        if ($entrega->delete()) {
+            $material = Materiale::find($entrega->materiale_id);
+            $material->stock = $material->stock - $entrega->cantidad;
+            $material->save();
+        }
+        $material = Materiale::all();
+        return view('materiales.show', compact('material'));
     }
 }
