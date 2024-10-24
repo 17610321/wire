@@ -28,4 +28,9 @@ class Entrega extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function ordenes(): HasMany
+    {
+        return $this->hasMany(Ordene::class);
+    }
 }
