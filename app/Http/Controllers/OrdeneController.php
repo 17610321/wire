@@ -30,7 +30,16 @@ class OrdeneController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $orden = new Ordene();
+        $orden->cliente = $request->cliente;
+        $orden->entrega_id = $request->entrega_id;
+
+        $orden->cantidad = $request->cantidad;
+        $orden->fecha = $request->fecha;
+        $orden->save();
+
+        $material = Materiale::all();
+        return view('materiales.show', compact('material'));
     }
 
     /**
