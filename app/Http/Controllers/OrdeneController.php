@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Entrega;
 use App\Models\Materiale;
 use App\Models\Ordene;
 use Illuminate\Http\Request;
@@ -13,8 +14,8 @@ class OrdeneController extends Controller
      */
     public function index()
     {
-        $material = Materiale::all();
-        return view('ordenes.index', compact('material'));
+        $entrega = Entrega::all();
+        return view('ordenes.index', compact('entrega'));
     }
 
     /**
@@ -38,8 +39,8 @@ class OrdeneController extends Controller
         $orden->fecha = $request->fecha;
         $orden->save();
 
-        $material = Materiale::all();
-        return view('materiales.show', compact('material'));
+        $ordenes = Ordene::all();
+        return view('ordenes.show', compact('ordenes'));
     }
 
     /**

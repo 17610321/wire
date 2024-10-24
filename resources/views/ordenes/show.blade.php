@@ -9,7 +9,7 @@
     <x-container class="py-12 ">
 
         <div class="py-10">
-            <span>En esta sección podrás ver tus materiales {{ Auth::user()->name }} </span>
+            <span>En esta sección podrás ver tus órdenes de trabajo {{ Auth::user()->name }} </span>
 
         </div>
 
@@ -22,8 +22,8 @@
                 <thead>
                     <tr>
 
-                        <th scope="col">Material</th>
-                        <th scope="col">Descripción</th>
+                        <th scope="col">Cliente</th>
+                        <th scope="col">Entrega</th>
                         <th scope="col">Cantidad</th>
                         <th scope="col">Fecha</th>
                         <th scope="col">Acción</th>
@@ -32,16 +32,16 @@
                 </thead>
                 <tbody>
                     <tr>
-                        @foreach ($entregas as $entrega)
-                            <th scope="row">{{ $entrega->materiale->name }}</th>
-                            <td>{{ $entrega->materiale->descripcion }}</td>
-                            <td>{{ $entrega->cantidad }}</td>
-                            <td> {{ $entrega->fecha }}</td>
+                        @foreach ($ordenes as $orden)
+                            <th scope="row">{{ $orden->cliente }}</th>
+                            <td>{{ $orden->entrega }}</td>
+                            <td>{{ $orden->cantidad }}</td>
+                            <td> {{ $orden->fecha }}</td>
                             <td>
-                                <form method="POST" action="{{ route('entrega.destroy', $entrega) }}">
+                                <form method="POST" action="{{ route('ordenes.destroy', $orden) }}">
                                     @csrf
                                     @method('delete')
-                                    <x-buttonr type="submit">Devolución</x-buttonr>
+                                    <x-buttonr type="submit">Eliminar</x-buttonr>
 
 
                                 </form>
@@ -55,7 +55,7 @@
 
 
 
-        {{ $entregas->links() }}
+
 
     </x-container>
 

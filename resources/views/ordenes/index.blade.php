@@ -25,9 +25,9 @@
                     material</label>
                 <select id="materiales" name="entrega_id"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    @foreach ($material as $materiales)
-                        <option value="{{ $materiales->id }}" name="entega_id">
-                            {{ $materiales->name }} {{ $materiales->descripcion }}</option>
+                    @foreach ($entrega as $entregas)
+                        <option value="{{ $entregas->id }}" name="entrega_id">
+                            {{ $entregas->materiale->name }} {{ $entregas->materiale->descripcion }}</option>
                     @endforeach
                 </select>
 
