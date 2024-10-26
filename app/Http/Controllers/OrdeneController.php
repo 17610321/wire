@@ -14,8 +14,9 @@ class OrdeneController extends Controller
      */
     public function index()
     {
-        $entrega = Entrega::all();
-        return view('ordenes.index', compact('entrega'));
+
+        $ordenes = Ordene::all();
+        return view('ordenes.show', compact('ordenes'));
     }
 
     /**
@@ -23,7 +24,8 @@ class OrdeneController extends Controller
      */
     public function create()
     {
-        //
+        $entrega = Entrega::all();
+        return view('ordenes.index', compact('entrega'));
     }
 
     /**
@@ -46,10 +48,7 @@ class OrdeneController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Ordene $ordene)
-    {
-        //
-    }
+    public function show(Ordene $ordene) {}
 
     /**
      * Show the form for editing the specified resource.

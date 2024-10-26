@@ -2,6 +2,10 @@
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
             {{ __('Revisa tu inventario') }}
+
+            <br>
+            <a href="{{ route('ordenes.create') }}" type="submit"><x-button class="mt-5">Agregar
+                    material a la ot</x-button> </a>
         </h2>
     </x-slot>
 
@@ -25,6 +29,7 @@
                         <th scope="col">Cliente</th>
                         <th scope="col">Entrega</th>
                         <th scope="col">Cantidad</th>
+                        <th scope="col">Descripción</th>
                         <th scope="col">Fecha</th>
                         <th scope="col">Acción</th>
 
@@ -34,7 +39,8 @@
                     <tr>
                         @foreach ($ordenes as $orden)
                             <th scope="row">{{ $orden->cliente }}</th>
-                            <td>{{ $orden->entrega }}</td>
+                            <td>{{ $orden->entrega->materiale->name }}</td>
+                            <td>{{ $orden->entrega->materiale->descripcion }}</td>
                             <td>{{ $orden->cantidad }}</td>
                             <td> {{ $orden->fecha }}</td>
                             <td>
