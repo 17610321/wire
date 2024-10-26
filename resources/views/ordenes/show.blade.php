@@ -22,7 +22,7 @@
 
 
 
-            <table class="table table-dark table-striped">
+            <table class="table table-info table-striped">
                 <thead>
                     <tr>
 
