@@ -39,6 +39,7 @@
                 <x-input value="{{ $mat->descripcion }}" disabled />
                 <x-label value="cantidad" />
                 <x-input placeholder="Ingrese cantidad" name="cantidad" />
+                <x-input-error for="cantidad" />
                 <x-label value="fecha" />
 
                 <x-input name="fecha" value="{{ $date }}" readonly />

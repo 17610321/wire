@@ -40,6 +40,15 @@ class StockController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate(
+            [
+
+                'cantidad' => ['required', 'integer'],
+
+
+            ]
+        );
         $stock = new Stock();
         $stock->materiale_id = $request->materiale_id;
         $stock->cantidad = $request->cantidad;

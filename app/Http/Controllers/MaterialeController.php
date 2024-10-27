@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Materiale;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Livewire\Attributes\Validate;
 
 class MaterialeController extends Controller
 {
@@ -28,6 +29,18 @@ class MaterialeController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(
+            [
+                'sku' => ['required', 'integer', 'max:10'],
+                'name' => ['required', 'string', 'max:50'],
+                'descripcion' => ['required', 'string', 'max:255'],
+                'user_id' => ['required', 'integer'],
+                'stock' => ['required', 'integer'],
+
+
+            ]
+        );
+
 
         $materiale = new Materiale();
         $materiale->sku = $request->sku;
@@ -66,9 +79,20 @@ class MaterialeController extends Controller
      */
     public function update(Request $request, Materiale $materiale)
     {
+        $request->validate(
+            [
+                'sku' => ['required', 'integer', 'max:10'],
+                'name' => ['required', 'string', 'max:50'],
+                'descripcion' => ['required', 'string', 'max:255'],
+                'stock' => ['required', 'integer', 'max:100000'],
+
+
+            ]
+        );
         $materiale->sku = $request->sku;
         $materiale->name = $request->name;
         $materiale->descripcion = $request->descripcion;
+        $materiale->stock = $request->stock;
         $materiale->save();
 
         $material = Materiale::all();

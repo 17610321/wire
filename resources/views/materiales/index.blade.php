@@ -21,12 +21,16 @@
 
                 <x-label value="Sku" />
                 <x-input placeholder="clave del material" name="sku" />
+                <x-input-error for="sku" />
                 <x-label value="Nombre" />
                 <x-input placeholder="Nombre del material" name="name" />
+                <x-input-error for="name" />
                 <x-label value="Descripcion" />
                 <x-input placeholder="Descripcion del material" name="descripcion" />
+                <x-input-error for="descripcion" />
                 <x-label value="Stock" />
                 <x-input placeholder="stock del material" name="stock" />
+                <x-input-error for="stock" />
 
                 <x-input type="hidden" name="user_id" value="{{ Auth::user()->id }}" />
 

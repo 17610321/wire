@@ -22,12 +22,16 @@
 
             <x-label value="Nombre" />
             <x-input placeholder="Nombre" name="name" value="{{ $usuario->name }}" />
+            <x-input-error for="name" />
             <x-label value="Apellidos" />
             <x-input placeholder="Apellidos" name="apellidos" value="{{ $usuario->apellidos }}" />
+            <x-input-error for="apellidos" />
             <x-label value="Numero de empleado" />
             <x-input placeholder="Número de empleado" name="empleado" value="{{ $usuario->empleado }}" />
+            <x-input-error for="empleado" />
             <x-label value="Email" />
             <x-input placeholder="Email" name="email" value="{{ $usuario->email }}" />
+            <x-input-error for="email" />
             <x-input type="hidden" name="password" value="{{ $usuario->password }}" />
 
 

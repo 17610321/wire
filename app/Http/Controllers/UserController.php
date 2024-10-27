@@ -55,6 +55,17 @@ class UserController extends Controller
     public function update(Request $request, User $usuario)
     {
 
+        $request->validate(
+            [
+
+                'name' => ['required', 'string', 'max:50'],
+                'apellidos' => ['required', 'string', 'max:100'],
+                'empleado' => ['required', 'integer'],
+                'email' => ['required', 'string', 'email', 'max:255'],
+
+
+            ]
+        );
         $usuario->name = $request->name;
         $usuario->apellidos = $request->apellidos;
         $usuario->empleado = $request->empleado;
