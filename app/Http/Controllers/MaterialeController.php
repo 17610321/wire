@@ -31,7 +31,7 @@ class MaterialeController extends Controller
     {
         $request->validate(
             [
-                'sku' => ['required', 'integer', 'max:10'],
+                'sku' => ['required', 'integer', 'unique:materiales'],
                 'name' => ['required', 'string', 'max:50'],
                 'descripcion' => ['required', 'string', 'max:255'],
                 'user_id' => ['required', 'integer'],
@@ -50,7 +50,7 @@ class MaterialeController extends Controller
         $materiale->stock = $request->stock;
         $materiale->save();
 
-        $material = Materiale::all();
+        $material = Materiale::paginate('10');
         return view('materiales.show', compact('material'));
     }
 
@@ -59,7 +59,7 @@ class MaterialeController extends Controller
      */
     public function show(Materiale $materiale)
     {
-        $material = Materiale::all();
+        $material = Materiale::paginate('10');
         return view('materiales.show', compact('material'));
 
         /**agregar db con join para hacer búsquedas con la paginacion */
@@ -81,7 +81,7 @@ class MaterialeController extends Controller
     {
         $request->validate(
             [
-                'sku' => ['required', 'integer', 'max:10'],
+                'sku' => ['required', 'integer'],
                 'name' => ['required', 'string', 'max:50'],
                 'descripcion' => ['required', 'string', 'max:255'],
                 'stock' => ['required', 'integer', 'max:100000'],
@@ -95,7 +95,7 @@ class MaterialeController extends Controller
         $materiale->stock = $request->stock;
         $materiale->save();
 
-        $material = Materiale::all();
+        $material = Materiale::paginate('10');
         return view('materiales.show', compact('material'));
     }
 
@@ -106,7 +106,7 @@ class MaterialeController extends Controller
     {
 
         $materiale->delete();
-        $material = Materiale::all();
+        $material = Materiale::paginate('10');
         return view('materiales.show', compact('material'));
     }
 }

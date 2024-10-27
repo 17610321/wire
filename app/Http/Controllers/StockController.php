@@ -63,7 +63,7 @@ class StockController extends Controller
             $material->save();
         }
 
-        $material = Materiale::all();
+        $material = Materiale::paginate('10');
         return view('materiales.show', compact('material'));
     }
 
@@ -102,7 +102,7 @@ class StockController extends Controller
             $material->stock = $material->stock - $stock->cantidad;
             $material->save();
         }
-        $material = Materiale::all();
+        $material = Materiale::paginate('10');
         return view('materiales.show', compact('material'));
     }
 }

@@ -47,7 +47,7 @@ class OrdeneController extends Controller
             $entrega->save();
         }
 
-        $ordenes = Ordene::all();
+        $ordenes = Ordene::paginate('10');
         return view('ordenes.show', compact('ordenes'));
     }
 

@@ -143,7 +143,7 @@
                 </tbody>
             </table>
         </div>
-
+        {{ $material->links() }}
     </x-container>
 
 </x-app-layout>
