@@ -124,5 +124,7 @@ class EntregaController extends Controller
             $material->stock = $material->stock + $entrega->cantidad;
             $material->save();
         }
+        $entregas = Entrega::paginate('10');
+        return view('entregas.total', compact('entregas'));
     }
 }
