@@ -44,10 +44,7 @@
                             Fecha
                         </th>
 
-                        <th scope="col" class="px-6 py-3">
 
-                            Actualizar
-                        </th>
                         <th scope="col" class="px-6 py-3">
 
                             Eliminar
@@ -83,16 +80,6 @@
                                 {{ $entrega->fecha }}
                             </td>
 
-                            <td>
-
-
-
-                                <x-buttong type="submit"> <a
-                                        href="{{ route('entrega.edit', $entrega) }}">actualizar</a></x-buttong>
-
-
-
-                            </td>
 
 
 

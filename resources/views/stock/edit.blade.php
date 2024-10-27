@@ -9,7 +9,7 @@
     <x-container class="py-12 ">
 
         <div class="py-10">
-            <span>En esta seccion podras ingresar las cantidades a tu inventario</span>
+            <span>En esta seccion podrás actualizar las cantidades a tu inventario</span>
         </div>
 
 
@@ -28,7 +28,7 @@
                 @csrf
 
                 @method('put')
-
+                <x-input name="materiale_id" value="{{ $entrega->materiale_id }}" type="hidden" />
                 <x-label value="User_id" />
                 <x-input name="user_id" value="{{ $entrega->user->name }}" readonly />
                 <x-label value="Material_id" />
@@ -42,7 +42,7 @@
 
 
                 <div class="py-5">
-                    <x-button type="submit">Crear</x-button>
+                    <x-button type="submit">Actualizar</x-button>
                 </div>
 
             </form>

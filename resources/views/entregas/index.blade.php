@@ -46,7 +46,8 @@
 
 
                 <x-label value="Cantidad" />
-                <x-input placeholder="Nombre del material" name="cantidad" />
+                <x-input placeholder="Cantidad del material" name="cantidad" />
+                <x-input-error for="cantidad" />
                 <x-label value="Fecha" />
                 <x-input name="fecha" value="{{ $date }}" readonly />
 

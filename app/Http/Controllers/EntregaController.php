@@ -53,6 +53,14 @@ class EntregaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(
+            [
+
+                'cantidad' => ['required', 'integer', 'max:100000'],
+
+
+            ]
+        );
         $entrega = new Entrega();
         $entrega->user_id = $request->user_id;
         $entrega->materiale_id = $request->materiale_id;
@@ -91,10 +99,17 @@ class EntregaController extends Controller
      */
     public function update(Request $request, Entrega $entrega)
     {
-
-
+        $request->validate(
+            ['cantidad' => ['required', 'integer', 'max:100000']]
+        );
+        $entrega->materiale_id = $request->materiale_id;
         $entrega->cantidad = $request->cantidad;
-        $entrega->save();
+
+        if ($entrega->save()) {
+            $material = Materiale::find($request->materiale_id);
+            $material->stock = $material->stock - $request->cantidad;
+            $material->save();
+        }
         $entregas = Entrega::paginate('10');
         return view('entregas.total', compact('entregas'));
     }

@@ -15,7 +15,7 @@ class OrdeneController extends Controller
     public function index()
     {
 
-        $ordenes = Ordene::all();
+        $ordenes = Ordene::paginate('10');
         return view('ordenes.show', compact('ordenes'));
     }
 
@@ -39,7 +39,13 @@ class OrdeneController extends Controller
 
         $orden->cantidad = $request->cantidad;
         $orden->fecha = $request->fecha;
-        $orden->save();
+
+
+        if ($orden->save()) {
+            $entrega = Entrega::find($request->entrega_id);
+            $entrega->cantidad = $entrega->cantidad - $request->cantidad;
+            $entrega->save();
+        }
 
         $ordenes = Ordene::all();
         return view('ordenes.show', compact('ordenes'));

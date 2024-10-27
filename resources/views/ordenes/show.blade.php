@@ -61,7 +61,7 @@
 
 
 
-
+        {{ $ordenes->links() }}
 
     </x-container>
 
