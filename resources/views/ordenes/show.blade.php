@@ -27,9 +27,9 @@
                     <tr>
 
                         <th scope="col">Cliente</th>
-                        <th scope="col">Entrega</th>
-                        <th scope="col">Cantidad</th>
+                        <th scope="col">Material</th>
                         <th scope="col">Descripción</th>
+                        <th scope="col">Cantidad</th>
                         <th scope="col">Fecha</th>
                         <th scope="col">Acción</th>
 
