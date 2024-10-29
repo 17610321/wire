@@ -21,7 +21,7 @@ class Buscador extends Component
     {
 
 
-        $material = DB::table('materiales')->where('descripcion', 'like', '%' . $this->buscar . '%');
+        $material = Materiale::where('descripcion', 'LIKE', '%' . $this->buscar . '%')->orWhere('nombre', 'LIKE', '%' . $this->buscar . '%');
 
         return view('livewire.buscador', ['material' => $material]);
     }
