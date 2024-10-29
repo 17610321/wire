@@ -48,7 +48,7 @@
     <br><br>
 
 
-    <div class="container overflow-hidden">
+    <div class="container ">
         <div class="row gy-5">
             <div class="col-6">
                 <div class="mb-5 card border-primary " style="max-width: 18rem;">
