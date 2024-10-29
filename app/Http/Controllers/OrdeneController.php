@@ -77,6 +77,12 @@ class OrdeneController extends Controller
      */
     public function destroy(Ordene $ordene)
     {
-        //
+        if ($ordene->delete()) {
+            $entrega = Entrega::find($ordene->entrega_id);
+            $entrega->cantidad = $entrega->cantidad + $ordene->cantidad;
+            $entrega->save();
+        }
+        $entregas = Entrega::paginate('10');
+        return view('entregas.individual', compact('entregas'));
     }
 }
