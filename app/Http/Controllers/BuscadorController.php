@@ -12,7 +12,7 @@ class BuscadorController extends Controller
 
     public function buscar()
     {
-        $material = Materiale::Where('descripcion', 'LIKE', '%' . $this->buscar . '%')->orWhere('name', 'LIKE', '%' . $this->buscar . '%')->paginate('10');
+        $material = Materiale::where('descripcion', 'LIKE', '%' . $this->buscar . '%')->orWhere('name', 'LIKE', '%' . $this->buscar . '%')->paginate('10');
 
         return view('materiales.show', ['material' => $material]);
     }
