@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BuscadorController;
 use App\Http\Controllers\EntregaController;
 use App\Http\Controllers\InventarioController;
 use App\Http\Controllers\MaterialeController;
@@ -49,3 +50,4 @@ Route::get('entregas', [EntregaController::class, 'mostrar'])->name('entregas.mo
 Route::resource('entrega', EntregaController::class);
 Route::get('inventario', [InventarioController::class, 'total'])->name('inventario.total');
 Route::resource('ordenes', OrdeneController::class);
+Route::get('buscador', [BuscadorController::class, 'buscar'])->name('buscador.buscar');
