@@ -92,7 +92,7 @@
 </body>
 
 <footer>
-    <div class="container mx-auto">
+    <div class=" fixed-bottom">
         Megacable Derechos reservados 2024
 
     </div>
