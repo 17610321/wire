@@ -21,7 +21,7 @@
             <table class="table table-dark table-striped">
                 <thead>
                     <tr>
-
+                        <th scope="col">Empleado</th>
                         <th scope="col">Material</th>
                         <th scope="col">Descripción</th>
                         <th scope="col">Cantidad</th>
@@ -33,6 +33,7 @@
                 <tbody>
                     <tr>
                         @foreach ($entregas as $entrega)
+                            <td>{{ $entrega->user->empleado }}</td>
                             <th scope="row">{{ $entrega->materiale->name }}</th>
                             <td>{{ $entrega->materiale->descripcion }}</td>
                             <td>{{ $entrega->cantidad }}</td>
