@@ -12,9 +12,9 @@
     <x-container class="py-12 ">
 
 
-        <form class="flex items-center max-w-sm mx-auto" action="{{ route('buscador.buscar') }}" method="GET">
+        <form class="flex items-center max-w-sm mx-auto" action="{{ route('buscador.buscar') }}" method="POST">
 
-            @method('GET')
+            @csrf
 
             <div class="relative w-full">
                 <div class="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3">

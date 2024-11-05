@@ -33,13 +33,13 @@
                 <tbody>
                     <tr>
                         @foreach ($entregas as $entrega)
-                            <td>{{ $entrega->user->empleado }}</td>
-                            <th scope="row">{{ $entrega->materiale->name }}</th>
-                            <td>{{ $entrega->materiale->descripcion }}</td>
+                            <td>{{ $entrega->empleado }}</td>
+                            <th scope="row">{{ $entrega->name }}</th>
+                            <td>{{ $entrega->descripcion }}</td>
                             <td>{{ $entrega->cantidad }}</td>
                             <td> {{ $entrega->fecha }}</td>
                             <td>
-                                <form method="POST" action="{{ route('entrega.destroy', $entrega) }}">
+                                <form method="POST" action="{{ route('entrega.destroy', $entrega->id) }}">
                                     @csrf
                                     @method('delete')
                                     <x-buttonr type="submit">Devolución</x-buttonr>

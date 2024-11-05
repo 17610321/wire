@@ -50,4 +50,4 @@ Route::get('entregas', [EntregaController::class, 'mostrar'])->name('entregas.mo
 Route::resource('entrega', EntregaController::class);
 Route::get('inventario', [InventarioController::class, 'total'])->name('inventario.total');
 Route::resource('ordenes', OrdeneController::class);
-Route::get('buscador', [BuscadorController::class, 'buscar'])->name('buscador.buscar');
+Route::post('buscador', [BuscadorController::class, 'buscar'])->name('buscador.buscar');

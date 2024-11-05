@@ -30,11 +30,13 @@ class EntregaController extends Controller
     public function mostrar()
     {
         $id = Auth::user()->id;
-        $entregas = DB::table('entregas')->where('user_id', '=', $id)
-            ->get();
-        $entregas = Entrega::paginate('10');
+        $entregas = DB::table('entregas')
+            ->join('users', 'users.id', '=', 'entregas.user_id')
+            ->join('materiales', 'materiales.id', '=', 'entregas.materiale_id')
+            ->select('entregas.*', 'users.empleado', 'materiales.name', 'materiales.descripcion')
+            ->where('entregas.user_id', $id)->paginate();
 
-        return view('entregas.individual', compact('entregas'));
+        return view('entregas.individual', ['entregas' => $entregas]);
     }
     /**
      * Show the form for creating a new resource.

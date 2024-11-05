@@ -8,11 +8,12 @@ use Illuminate\Http\Request;
 class BuscadorController extends Controller
 {
 
-    public $buscar;
 
-    public function buscar()
+
+    public function buscar(Request $request)
     {
-        $material = Materiale::where('descripcion', 'LIKE', '%' . $this->buscar . '%')->orWhere('name', 'LIKE', '%' . $this->buscar . '%')->paginate('10');
+
+        $material = Materiale::where('descripcion', 'LIKE', '%' . $request->buscar . '%')->orWhere('name', 'LIKE', '%' . $request->buscar . '%')->paginate('10');
 
         return view('materiales.show', ['material' => $material]);
     }
