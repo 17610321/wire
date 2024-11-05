@@ -30,7 +30,7 @@ class EntregaController extends Controller
     public function mostrar()
     {
         $id = Auth::user()->id;
-        $entregas = Entrega::where('user_id', '=', $id)
+        $entregas = DB::table('entregas')->where('user_id', '=', $id)
             ->get();
         $entregas = Entrega::paginate('10');
 
