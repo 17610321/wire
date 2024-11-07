@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('cliente');
             $table->unsignedBigInteger('entrega_id');
-            $table->foreign('entrega_id')->references('id')->on('entregas')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('entrega_id')->references('id')->on('entregas')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('cantidad');
             $table->date('fecha');
 
