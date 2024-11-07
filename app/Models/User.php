@@ -11,6 +11,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class User extends Authenticatable
 {
@@ -80,5 +81,25 @@ class User extends Authenticatable
     public function entregas(): BelongsToMany
     {
         return $this->belongsToMany(Entrega::class);
+    }
+
+    //** MUTADORES DE NOMBRE Y APELLIDOS */
+
+    protected function name(): Attribute
+    {
+        return new Attribute(
+            set: function ($value) {
+                return strtolower($value);
+            }
+        );
+    }
+
+    protected function apellidos(): Attribute
+    {
+        return new Attribute(
+            set: function ($value) {
+                return strtolower($value);
+            }
+        );
     }
 }
