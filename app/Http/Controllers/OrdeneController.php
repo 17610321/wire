@@ -6,6 +6,8 @@ use App\Models\Entrega;
 use App\Models\Materiale;
 use App\Models\Ordene;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class OrdeneController extends Controller
 {
@@ -24,7 +26,9 @@ class OrdeneController extends Controller
      */
     public function create()
     {
-        $entrega = Entrega::all();
+        $user = Auth::user()->id;
+        $entrega = Entrega::all()->where('user_id', '=', $user);
+
         return view('ordenes.index', compact('entrega'));
     }
 
@@ -82,7 +86,7 @@ class OrdeneController extends Controller
             $entrega->cantidad = $entrega->cantidad + $ordene->cantidad;
             $entrega->save();
         }
-        $entregas = Entrega::paginate('10');
-        return view('entregas.individual', compact('entregas'));
+        $ordenes = Ordene::paginate('10');
+        return view('ordenes.show', compact('ordenes'));
     }
 }
