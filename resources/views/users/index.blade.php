@@ -39,11 +39,7 @@
                         </th>
                         <th scope="col" class="px-6 py-3">
 
-                            Editar
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-
-                            Eliminar
+                            Acción
                         </th>
 
 
@@ -85,16 +81,7 @@
 
 
                             </td>
-                            <td>
 
-                                <form method="POST" action="{{ route('usuarios.destroy', $user) }}">
-                                    @csrf
-                                    @method('delete')
-                                    <x-buttonr type="submit">eliminar</x-buttonr>
-
-
-                                </form>
-                            </td>
                     </tr>
                     @endforeach
 
