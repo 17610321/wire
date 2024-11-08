@@ -4,8 +4,71 @@
             {{ __('Lista de materiales') }}
         </h2>
 
-        <a href="{{ route('materiales.index') }}" type="submit"><x-button class="mt-5">Crear nuevo
-                material</x-button> </a>
+        <div class="py-3">
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModalmat">
+                Crear material
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalmat" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar material</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class=" modal-body">
+
+
+
+                            <form method="POST" action="{{ route('materiales.store') }}">
+                                @csrf
+
+
+
+
+                                <x-label value="Sku" />
+                                <x-input placeholder="clave del material" name="sku" />
+                                <x-input-error for="sku" />
+                                <x-label value="Nombre" />
+                                <x-input placeholder="Nombre del material" name="name" />
+                                <x-input-error for="name" />
+                                <x-label value="Descripcion" />
+                                <x-input placeholder="Descripcion del material" name="descripcion" />
+                                <x-input-error for="descripcion" />
+                                <x-label value="Stock" />
+                                <x-input placeholder="stock del material" name="stock" />
+                                <x-input-error for="stock" />
+
+                                <x-input type="hidden" name="user_id" value="{{ Auth::user()->id }}" />
+
+
+
+
+
+
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Crear</button>
+
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+
+
+
+
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </x-slot>
 
 
@@ -20,8 +83,8 @@
                 <div class="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3">
                     <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M3 5v10M3 5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm12 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0V6a3 3 0 0 0-3-3H9m1.5-2-2 2 2 2" />
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d=" M3 5v10M3 5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm12 0a2 2 0 1
+                            0 0 4 2 2 0 0 0 0-4Zm0 0V6a3 3 0 0 0-3-3H9m1.5-2-2 2 2 2" />
                     </svg>
                 </div>
                 <input type="text" id="simple-search" name="buscar"
@@ -121,7 +184,8 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar</h1>
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar
+                                                </h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
@@ -158,7 +222,8 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item"
-                                                href="{{ route('materiales.edit', $materiale) }}">Editar</a></li>
+                                                href="{{ route('materiales.edit', $materiale) }}">Editar</a>
+                                        </li>
                                         <li><a class="dropdown-item"
                                                 href="{{ route('stock.index2', $materiale) }}">Ingresar
                                                 stock</a></li>

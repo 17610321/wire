@@ -7,6 +7,7 @@ use App\Http\Controllers\MaterialeController;
 use App\Http\Controllers\OrdeneController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\ChekAdmin;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,19 +36,19 @@ Route::middleware([
 });
 
 
-Route::get('material', [MaterialeController::class, 'show'])->name('materiales.mostrar');
+Route::get('material', [MaterialeController::class, 'show'])->name('materiales.mostrar')->middleware(ChekAdmin::class);
 
-Route::resource('materiales', MaterialeController::class);
-Route::resource('usuarios', UserController::class);
+Route::resource('materiales', MaterialeController::class)->middleware(ChekAdmin::class);
+Route::resource('usuarios', UserController::class)->middleware(ChekAdmin::class);
 
-Route::get('stock/{materiale}', [StockController::class, 'index2'])->name('stock.index2');
-Route::resource('stock', StockController::class);
+Route::get('stock/{materiale}', [StockController::class, 'index2'])->name('stock.index2')->middleware(ChekAdmin::class);
+Route::resource('stock', StockController::class)->middleware(ChekAdmin::class);
 
 
 Route::get('entregas', [EntregaController::class, 'mostrar'])->name('entregas.mostrar');
 
 
-Route::resource('entrega', EntregaController::class);
+Route::resource('entrega', EntregaController::class)->middleware(ChekAdmin::class);
 Route::get('inventario', [InventarioController::class, 'total'])->name('inventario.total');
 Route::resource('ordenes', OrdeneController::class);
 Route::post('buscador', [BuscadorController::class, 'buscar'])->name('buscador.buscar');
