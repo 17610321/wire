@@ -45,7 +45,7 @@ Route::get('stock/{materiale}', [StockController::class, 'index2'])->name('stock
 Route::resource('stock', StockController::class)->middleware(ChekAdmin::class);
 
 
-Route::get('entregas', [EntregaController::class, 'mostrar'])->name('entregas.mostrar');
+Route::get('entregas', [EntregaController::class, 'mostrar'])->name('entregas.mostrar')->middleware(ChekAdmin::class);
 
 
 Route::resource('entrega', EntregaController::class)->middleware(ChekAdmin::class);

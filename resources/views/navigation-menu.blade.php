@@ -175,26 +175,30 @@
     </div>
 
     <!-- Responsive Navigation Menu -->
+
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('materiales.index') }}" :active="request()->routeIs('materiales.index')">
+            <x-responsive-nav-link href="{{ route('materiales.mostrar') }}" :active="request()->routeIs('materiales.mostrar')">
                 {{ __('Materiales') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link href="{{ route('stock.index') }}" :active="request()->routeIs('stock.index')">
                 {{ __('Stock') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link href="{{ route('usuarios.index') }}" :active="request()->routeIs('usuarios.index')">
                 {{ __('Usuarios') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link href="{{ route('inventario.total') }}" :active="request()->routeIs('inventario.total')">
                 {{ __('Entregas') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Devoluciones') }}
+
+            <x-responsive-nav-link href="{{ route('entregas.mostrar') }}" :active="request()->routeIs('entregas.mostrar')">
+                {{ __('Mi inventario') }}
             </x-responsive-nav-link>
+
+            <x-responsive-nav-link href="{{ route('ordenes.index') }}" :active="request()->routeIs('ordenes.index')">
+                {{ __('Ots') }}
+            </x-responsive-nav-link>
+
         </div>
 
         <!-- Responsive Settings Options -->
