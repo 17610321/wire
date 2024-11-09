@@ -45,10 +45,10 @@ Route::get('stock/{materiale}', [StockController::class, 'index2'])->name('stock
 Route::resource('stock', StockController::class)->middleware(ChekAdmin::class);
 
 
-Route::get('entregas', [EntregaController::class, 'mostrar'])->name('entregas.mostrar')->middleware(ChekAdmin::class);
+Route::get('entregas', [EntregaController::class, 'mostrar'])->name('entregas.mostrar');
 
 
 Route::resource('entrega', EntregaController::class)->middleware(ChekAdmin::class);
-Route::get('inventario', [InventarioController::class, 'total'])->name('inventario.total');
+Route::get('inventario', [InventarioController::class, 'total'])->name('inventario.total')->middleware(ChekAdmin::class);
 Route::resource('ordenes', OrdeneController::class);
 Route::post('buscador', [BuscadorController::class, 'buscar'])->name('buscador.buscar');

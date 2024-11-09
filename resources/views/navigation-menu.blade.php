@@ -187,6 +187,7 @@
             <x-responsive-nav-link href="{{ route('usuarios.index') }}" :active="request()->routeIs('usuarios.index')">
                 {{ __('Usuarios') }}
             </x-responsive-nav-link>
+
             <x-responsive-nav-link href="{{ route('inventario.total') }}" :active="request()->routeIs('inventario.total')">
                 {{ __('Entregas') }}
             </x-responsive-nav-link>
@@ -198,6 +199,7 @@
             <x-responsive-nav-link href="{{ route('ordenes.index') }}" :active="request()->routeIs('ordenes.index')">
                 {{ __('Ots') }}
             </x-responsive-nav-link>
+
 
         </div>
 
