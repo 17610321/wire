@@ -2,7 +2,7 @@
 
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('Revisa tu inventario') }}
+            {{ __('Ordenes de trabajo') }}
 
             <br>
             <a href="{{ route('ordenes.create') }}" type="submit"><x-button class="mt-5">Agregar

@@ -35,8 +35,7 @@
                 <x-label value="Cantidad" />
                 <x-input placeholder="cantidad del material" name="cantidad" />
                 <x-label value="fecha" />
-                <x-input type="date" name="fecha" />
-
+                <x-input name="fecha" value="{{ $date }}" readonly />
 
 
                 <div class="py-5">

@@ -7,6 +7,7 @@ use App\Models\Materiale;
 use App\Models\Ordene;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 
 class OrdeneController extends Controller
@@ -26,10 +27,11 @@ class OrdeneController extends Controller
      */
     public function create()
     {
+        $date = Date::now();
         $user = Auth::user()->id;
         $entrega = Entrega::all()->where('user_id', '=', $user);
 
-        return view('ordenes.index', compact('entrega'));
+        return view('ordenes.index', compact('entrega', 'date'));
     }
 
     /**

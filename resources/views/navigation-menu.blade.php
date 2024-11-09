@@ -12,32 +12,40 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    @auth
 
 
-                    <x-nav-link href="{{ route('materiales.mostrar') }}" :active="request()->routeIs('materiales.mostrar')">
-                        {{ __('Materiales') }}
-                    </x-nav-link>
-                    <x-nav-link href="{{ route('stock.index') }}" :active="request()->routeIs('stock.index')">
-                        {{ __('Stock') }}
-                    </x-nav-link>
-                    <x-nav-link href="{{ route('usuarios.index') }}" :active="request()->routeIs('usuarios.index')">
-                        {{ __('Usuarios') }}
-                    </x-nav-link>
+                        @if (Auth::user()->rol == 'admin')
+                            <x-nav-link href="{{ route('materiales.mostrar') }}" :active="request()->routeIs('materiales.mostrar')">
+                                {{ __('Materiales') }}
+                            </x-nav-link>
+                            <x-nav-link href="{{ route('stock.index') }}" :active="request()->routeIs('stock.index')">
+                                {{ __('Stock') }}
+                            </x-nav-link>
+                            <x-nav-link href="{{ route('usuarios.index') }}" :active="request()->routeIs('usuarios.index')">
+                                {{ __('Usuarios') }}
+                            </x-nav-link>
 
-                    <x-nav-link href="{{ route('inventario.total') }}" :active="request()->routeIs('inventario.total')">
-                        {{ __('Entregas ') }}
-                    </x-nav-link>
-
-                    <x-nav-link href="{{ route('entregas.mostrar') }}" :active="request()->routeIs('entregas.mostrar')">
-                        {{ __('Mi inventario') }}
-                    </x-nav-link>
-                    <x-nav-link href="{{ route('ordenes.index') }}" :active="request()->routeIs('ordenes.index')">
-                        {{ __('Ots') }}
-                    </x-nav-link>
+                            <x-nav-link href="{{ route('inventario.total') }}" :active="request()->routeIs('inventario.total')">
+                                {{ __('Entregas ') }}
+                            </x-nav-link>
+                        @endif
+                        @if (Auth::user()->rol == 'user')
+                            <x-nav-link href="{{ route('entregas.mostrar') }}" :active="request()->routeIs('entregas.mostrar')">
+                                {{ __('Mi inventario') }}
+                            </x-nav-link>
+                            <x-nav-link href="{{ route('ordenes.index') }}" :active="request()->routeIs('ordenes.index')">
+                                {{ __('Ots') }}
+                            </x-nav-link>
+                        @endif
+                    @endauth
                 </div>
             </div>
 
-            <div class="hidden sm:flex sm:items-center sm:ms-6">
+
+
+
+            <div class="hidden object-right sm:flex sm:items-center sm:ms-6">
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="relative ms-3">
