@@ -7,7 +7,7 @@
         <div class="py-3">
 
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModalmat">
+            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModalmat">
                 Crear material
             </button>
 
