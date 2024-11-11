@@ -38,14 +38,54 @@
                             <td>{{ $entrega->descripcion }}</td>
                             <td>{{ $entrega->cantidad }}</td>
                             <td> {{ $entrega->fecha }}</td>
+
+
                             <td>
-                                <form method="POST" action="{{ route('entrega.destroy', $entrega->id) }}">
-                                    @csrf
-                                    @method('delete')
-                                    <x-buttonr type="submit">Devolución</x-buttonr>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                    data-bs-target="#exampleDev">
+                                    Devolución
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleDev" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+
+                                            <div class="mx-auto modal-body">
 
 
-                                </form>
+
+                                                <form method="POST"
+                                                    action="{{ route('entrega.destroy', $entrega->id) }}">
+                                                    @csrf
+                                                    @method('delete')
+
+
+
+
+                                                    <x-label value="¿Estás seguro de hacer la devolución?" />
+
+                                            </div>
+                                            <div class="mx-auto modal-footer">
+                                                <button type="submit" class="btn btn-success"
+                                                    data-bs-dismiss="modal">Devolver</button>
+
+                                                <button type="button" class="btn btn-danger"
+                                                    data-bs-dismiss="modal">Cerrar</button>
+
+
+
+
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </td>
 
                     </tr>
                     @endforeach
