@@ -125,7 +125,15 @@ class EntregaController extends Controller
             $material->stock = $material->stock + $entrega->cantidad;
             $material->save();
         }
-        $entregas = Entrega::paginate('10');
-        return view('entregas.total', compact('entregas'));
+
+
+        $id = Auth::user()->id;
+        $entregas = DB::table('entregas')
+            ->join('users', 'users.id', '=', 'entregas.user_id')
+            ->join('materiales', 'materiales.id', '=', 'entregas.materiale_id')
+            ->select('entregas.*', 'users.empleado', 'materiales.name', 'materiales.descripcion')
+            ->where('entregas.user_id', $id)->paginate();
+
+        return view('entregas.individual', ['entregas' => $entregas]);
     }
 }
